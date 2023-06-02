@@ -5,16 +5,16 @@ import lombok.*;
 
 @Entity @Setter @Getter
 @NoArgsConstructor
-@Table(name="Task_Table")
-public class Task {
+@Table(name="Task")
+public class TaskEntity {
 
     @Id
     @SequenceGenerator(name="T_WD_APLY_APLYSN_GENERATOR", sequenceName="T_WD_APLY_APLY_SN_SEQ", allocationSize=1)
     @GeneratedValue(strategy=GenerationType.AUTO, generator="T_WD_APLY_APLYSN_GENERATOR")
     private Long id;
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id")
-    private User user;
+    @JoinColumn(name = "list_id")
+    private ListEntity list;
     @Column(name="task_month")
     private int month;
     @Column(name = "task_day")
@@ -24,16 +24,16 @@ public class Task {
     private Boolean complete;
     private Boolean alarm;
 
-    @Builder
-    public Task(User user, int month, int day, String title, String content, Boolean complete, Boolean alarm){
-        this.user = user;
-        this.month = month;
-        this.day = day;
-        this.title = title;
-        this.content = content;
-        this.complete = complete;
-        this.alarm = alarm;
-    }
+//    @Builder
+//    public TaskEntity(User user, int month, int day, String title, String content, Boolean complete, Boolean alarm){
+//        this.user = user;
+//        this.month = month;
+//        this.day = day;
+//        this.title = title;
+//        this.content = content;
+//        this.complete = complete;
+//        this.alarm = alarm;
+//    }
 
 
 
