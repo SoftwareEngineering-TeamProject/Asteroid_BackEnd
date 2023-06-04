@@ -1,8 +1,8 @@
-package com.example.todolist.service;
+package dev.asteroid.todolist.service;
 
-import com.example.todolist.domain.member.MemberEntity;
-import com.example.todolist.domain.member.MemberRepository;
-import com.example.todolist.dto.MemberRequestDto;
+import dev.asteroid.todolist.domain.member.MemberEntity;
+import dev.asteroid.todolist.domain.member.MemberRepository;
+import dev.asteroid.todolist.dto.MemberRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

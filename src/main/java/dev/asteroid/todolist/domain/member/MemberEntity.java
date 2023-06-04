@@ -1,4 +1,4 @@
-package com.example.todolist.domain.member;
+package dev.asteroid.todolist.domain.member;
 
 import jakarta.persistence.*;
 import lombok.Getter;

@@ -1,7 +1,7 @@
-package com.example.todolist.web;
+package dev.asteroid.todolist.web;
 
-import com.example.todolist.dto.MemberRequestDto;
-import com.example.todolist.service.MemberService;
+import dev.asteroid.todolist.dto.MemberRequestDto;
+import dev.asteroid.todolist.service.MemberService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
