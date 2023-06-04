@@ -1,4 +1,4 @@
-package dev.asteroid.todolist.dto;
+package dev.asteroid.todolist.dto.member;
 
 import lombok.Getter;
 
