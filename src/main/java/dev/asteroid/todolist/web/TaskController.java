@@ -19,8 +19,13 @@ public class TaskController {
         return ResponseEntity.status(HttpStatus.CREATED).body(taskService.save(requestDto));
     }
 
+    @GetMapping("/{userId}/todo/{listId}")
+    public ResponseEntity getAllTask(@PathVariable Long listId) {
+        return ResponseEntity.status(HttpStatus.OK).body(taskService.findAllInCurrent(listId));
+    }
+
     @GetMapping("/{userId}/todo/{listId}/{taskId}")
-    public ResponseEntity getTask(@PathVariable Long taskId) {
+    public ResponseEntity getOneTask(@PathVariable Long taskId) {
         return ResponseEntity.status(HttpStatus.OK).body(taskService.findById(taskId));
     }
 

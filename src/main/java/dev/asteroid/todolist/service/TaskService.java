@@ -8,6 +8,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Optional;
 
 @RequiredArgsConstructor
@@ -19,6 +20,12 @@ public class TaskService {
     @Transactional
     public Long save(TaskRequestDto requestDto) {
         return taskRepository.save(requestDto.toEntity()).getId();
+    }
+
+    public List<TaskResponseDto> findAllInCurrent(Long listId) {
+        List<TaskEntity> taskEntities = taskRepository.findAllInCurrent(listId).get();
+        TaskResponseDto responseDto = new TaskResponseDto(taskEntities);  // 조회한 엔티티들을 모두 DTO 로 변환
+        return responseDto.getResponseDtoList();
     }
 
     public TaskResponseDto findById(Long taskId) {

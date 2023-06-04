@@ -19,9 +19,10 @@ public class ListController {
         return ResponseEntity.status(HttpStatus.CREATED).body(listService.save(requestDto));
     }
 
-    @GetMapping("/{userId}/todo/{listId}")
-    public ResponseEntity getList(@PathVariable Long listId) {
-        return ResponseEntity.status(HttpStatus.OK).body(listService.findById(listId));
+    // 단일 ListEntity 조회 용도는 필요 없을듯?
+    @GetMapping("/{userId}/todo")
+    public ResponseEntity getAllList(@PathVariable Long userId) {
+        return ResponseEntity.status(HttpStatus.OK).body(listService.findAllInCurrent(userId));
     }
 
     @PatchMapping("/{userId}/todo/{listId}")
