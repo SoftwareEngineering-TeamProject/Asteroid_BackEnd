@@ -1,19 +1,14 @@
-package com.example.todolist.service;
+package dev.asteroid.todolist.service;
 
-import com.example.todolist.domain.ListEntity;
-import com.example.todolist.domain.MemberEntity;
-import com.example.todolist.dto.ListRequestDto;
-import com.example.todolist.dto.ListResponseDto;
-import com.example.todolist.repository.ListRepository;
-import com.example.todolist.repository.MemberRepository;
+import dev.asteroid.todolist.domain.ListEntity;
+import dev.asteroid.todolist.domain.MemberEntity;
+import dev.asteroid.todolist.dto.ListResponseDto;
+import dev.asteroid.todolist.repository.ListRepository;
+import dev.asteroid.todolist.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -54,8 +49,8 @@ public class ListService {
         return listResponseDtos;
     }
 
-    public Long update(ListRequestDto requestDto){
-        Optional<ListEntity> list = listRepository.findById(requestDto.getId());
+    public Long update(Long listId,ListResponseDto requestDto){
+        Optional<ListEntity> list = listRepository.findById(listId);
         if(list.isPresent()){
             list.get().setTitle(requestDto.getTitle());
             list.get().setTasks(requestDto.getTasks());
@@ -65,10 +60,9 @@ public class ListService {
         return 0L;
         }
     }
-    public Long delete(ListRequestDto requestDto){
-        Optional<ListEntity> list = listRepository.findById(requestDto.getId());
+    public Long delete(Long listId){
+        Optional<ListEntity> list = listRepository.findById(listId);
         if(list.isPresent()){
-            Long listId = list.get().getId();
             listRepository.delete(list.get());
             return listId;
         }

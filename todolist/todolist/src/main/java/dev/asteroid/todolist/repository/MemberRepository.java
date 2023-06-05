@@ -1,6 +1,6 @@
-package com.example.todolist.repository;
+package dev.asteroid.todolist.repository;
 
-import com.example.todolist.domain.MemberEntity;
+import dev.asteroid.todolist.domain.MemberEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
