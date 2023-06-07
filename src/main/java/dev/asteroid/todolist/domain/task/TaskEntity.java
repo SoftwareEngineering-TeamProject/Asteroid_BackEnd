@@ -1,11 +1,14 @@
 package dev.asteroid.todolist.domain.task;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import dev.asteroid.todolist.domain.list.ListEntity;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.Date;
 
 import static jakarta.persistence.GenerationType.*;
 
@@ -26,9 +29,13 @@ public class TaskEntity {
     private String content;
     private Boolean completed;
 
-    public TaskEntity(ListEntity list, String content, Boolean completed) {
+    @JsonFormat(pattern = "yyyy.MM.dd")
+    private Date deadline;
+
+    public TaskEntity(ListEntity list, String content, Boolean completed, Date deadline) {
         this.list = list;
         this.content = content;
         this.completed = completed;
+        this.deadline = deadline;
     }
 }

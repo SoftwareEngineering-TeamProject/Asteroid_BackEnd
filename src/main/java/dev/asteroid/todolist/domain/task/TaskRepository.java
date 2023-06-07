@@ -1,6 +1,5 @@
 package dev.asteroid.todolist.domain.task;
 
-import dev.asteroid.todolist.domain.list.ListEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
@@ -14,4 +13,7 @@ public interface TaskRepository extends JpaRepository<TaskEntity, Long> {
 
     @Query(value = "SELECT * FROM TASK WHERE LIST_ID = :listId", nativeQuery = true)
     Optional<List<TaskEntity>> findAllInCurrent(@Param("listId") Long listId);
+
+    @Query(value = "SELECT * FROM TASK WHERE LIST_ID = :listId ORDER BY DEADLINE", nativeQuery = true)
+    Optional<List<TaskEntity>> findAllInCurrentSortByDeadline(@Param("listId") Long listId);
 }

@@ -32,7 +32,7 @@ public class TaskService {
         Optional<TaskEntity> optionalTask = taskRepository.findById(taskId);
         TaskResponseDto responseDto = new TaskResponseDto();
         if(optionalTask.isPresent()) {
-            responseDto = new TaskResponseDto(optionalTask.get().getContent(), optionalTask.get().getCompleted());
+            responseDto = new TaskResponseDto(optionalTask.get().getContent(), optionalTask.get().getCompleted(), optionalTask.get().getDeadline());
         }
         return responseDto;
     }
@@ -54,5 +54,11 @@ public class TaskService {
     @Transactional
     public void delete(Long taskId) {
         taskRepository.deleteById(taskId);
+    }
+
+    public List<TaskResponseDto> sortByDeadline(Long listId) {
+        List<TaskEntity> taskEntities = taskRepository.findAllInCurrentSortByDeadline(listId).get();
+        TaskResponseDto responseDto = new TaskResponseDto(taskEntities);  // 조회한 엔티티들을 모두 DTO 로 변환
+        return responseDto.getResponseDtoList();
     }
 }
