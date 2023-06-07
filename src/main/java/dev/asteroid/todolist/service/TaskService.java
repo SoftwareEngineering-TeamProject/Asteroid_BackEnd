@@ -58,7 +58,19 @@ public class TaskService {
 
     public List<TaskResponseDto> sortByDeadline(Long listId) {
         List<TaskEntity> taskEntities = taskRepository.findAllInCurrentSortByDeadline(listId).get();
-        TaskResponseDto responseDto = new TaskResponseDto(taskEntities);  // 조회한 엔티티들을 모두 DTO 로 변환
+        TaskResponseDto responseDto = new TaskResponseDto(taskEntities);
+        return responseDto.getResponseDtoList();
+    }
+
+    public List<TaskResponseDto> sortByCompleted(Long listId) {
+        List<TaskEntity> taskEntities = taskRepository.findAllInCurrentSortByCompleted(listId).get();
+        TaskResponseDto responseDto = new TaskResponseDto(taskEntities);
+        return responseDto.getResponseDtoList();
+    }
+
+    public List<TaskResponseDto> sortByUncompleted(Long listId) {
+        List<TaskEntity> taskEntities = taskRepository.findAllInCurrentSortByUnCompleted(listId).get();
+        TaskResponseDto responseDto = new TaskResponseDto(taskEntities);
         return responseDto.getResponseDtoList();
     }
 }

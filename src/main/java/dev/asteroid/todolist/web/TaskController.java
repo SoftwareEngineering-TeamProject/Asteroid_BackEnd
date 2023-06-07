@@ -55,5 +55,15 @@ public class TaskController {
 
 
     // 완료된 작업만 보는 옵션
+    @GetMapping("/{userId}/todo/{listId}/completed")
+    public ResponseEntity getAllTaskSortByCompleted(@PathVariable Long listId) {
+        return ResponseEntity.status(HttpStatus.OK).body(taskService.sortByCompleted(listId));
+    }
+
+    // 완료되지 않은 작업만 보는 옵션
+    @GetMapping("/{userId}/todo/{listId}/uncompleted")
+    public ResponseEntity getAllTaskSortByUncompleted(@PathVariable Long listId) {
+        return ResponseEntity.status(HttpStatus.OK).body(taskService.sortByUncompleted(listId));
+    }
 
 }
