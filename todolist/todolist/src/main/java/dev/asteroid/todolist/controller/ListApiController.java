@@ -31,7 +31,7 @@ public class ListApiController {
     ResponseEntity read(HttpServletRequest request){
         HttpSession session = request.getSession();
         Long memberId = (Long) session.getAttribute("currentMember");
-        return ResponseEntity.status(HttpStatus.CREATED).body(listService.read(memberId));
+        return ResponseEntity.status(HttpStatus.OK).body(listService.read(memberId));
     }
     @PatchMapping("/list/{listId}")
     ResponseEntity update(@PathVariable("listId") Long listId,@RequestBody ListResponseDto requestDto){
@@ -39,7 +39,7 @@ public class ListApiController {
     }
     @DeleteMapping("/list/{listId}")
     ResponseEntity delete(@PathVariable Long listId){
-        return ResponseEntity.status(HttpStatus.CREATED).body(listService.delete(listId));
+        return ResponseEntity.status(HttpStatus.OK).body(listService.delete(listId));
         }
 
 }
