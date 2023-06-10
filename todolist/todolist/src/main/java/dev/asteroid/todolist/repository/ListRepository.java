@@ -1,6 +1,6 @@
-package com.example.todolist.repository;
+package dev.asteroid.todolist.repository;
 
-import com.example.todolist.domain.ListEntity;
+import dev.asteroid.todolist.domain.ListEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
