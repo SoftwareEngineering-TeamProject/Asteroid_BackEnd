@@ -1,17 +1,17 @@
 spring:
   datasource:
-    url: jdbc:h2:tcp://localhost/~/jpashop
-    username: sa
-    password:
-    driver-class-name: org.h2.Driver
-#    url: jdbc:mysql://db-who.c2dkfbc2qp0h.ap-northeast-2.rds.amazonaws.com:3306/dbwho
-#    username: admin
-#    password: dbals3319
-#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:h2:tcp://localhost/~/jpashop
+#    username: sa
+#    password:
+#    driver-class-name: org.h2.Driver
+    url: jdbc:mysql://db-who.c2dkfbc2qp0h.ap-northeast-2.rds.amazonaws.com:3306/dbwho
+    username: admin
+    password: dbals3319
+    driver-class-name: com.mysql.cj.jdbc.Driver
 
   jpa:
-#    database-platform: org.hibernate.dialect.MySQLDialect
-    #    hibernate.hbm2ddl.auto: update
+    database-platform: org.hibernate.dialect.MySQLDialect
+#        hibernate.hbm2ddl.auto: update
     hibernate:
       ddl-auto: create
     properties:

@@ -5,15 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1379749a-5881-423a-8bfa-cd00a4c19b06" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/controller/TaskApiController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/controller/TaskApiController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/domain/ListEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/domain/ListEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/domain/TaskEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/domain/TaskEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/dto/TaskRequestDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/dto/TaskRequestDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/dto/TaskResponseDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/dto/TaskResponseDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/repository/TaskRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/repository/TaskRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/service/TaskService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dev/asteroid/todolist/service/TaskService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
