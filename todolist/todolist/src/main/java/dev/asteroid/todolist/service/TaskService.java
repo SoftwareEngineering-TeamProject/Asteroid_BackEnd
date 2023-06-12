@@ -16,7 +16,7 @@ public class TaskService {
     @Autowired
     TaskRepository taskRepository;
 
-
+    @Transactional
     public Long save(TaskRequestDto requestDto) {
         return taskRepository.save(requestDto.toEntity()).getId();
     }
@@ -31,7 +31,7 @@ public class TaskService {
         Optional<TaskEntity> optionalTask = taskRepository.findById(taskId);
         TaskResponseDto responseDto = new TaskResponseDto();
         if(optionalTask.isPresent()) {
-            responseDto = new TaskResponseDto(optionalTask.get().getContent(), optionalTask.get().getCompleted());
+            responseDto = new TaskResponseDto(optionalTask.get().getContent(), optionalTask.get().getCompleted(), optionalTask.get().getDeadline());
         }
         return responseDto;
     }
@@ -54,4 +54,23 @@ public class TaskService {
     public void delete(Long taskId) {
         taskRepository.deleteById(taskId);
     }
+
+    public List<TaskResponseDto> sortByDeadline(Long listId) {
+        List<TaskEntity> taskEntities = taskRepository.findAllInCurrentSortByDeadline(listId).get();
+        TaskResponseDto responseDto = new TaskResponseDto(taskEntities);
+        return responseDto.getResponseDtoList();
+    }
+
+    public List<TaskResponseDto> sortByCompleted(Long listId) {
+        List<TaskEntity> taskEntities = taskRepository.findAllInCurrentSortByCompleted(listId).get();
+        TaskResponseDto responseDto = new TaskResponseDto(taskEntities);
+        return responseDto.getResponseDtoList();
+    }
+
+    public List<TaskResponseDto> sortByUncompleted(Long listId) {
+        List<TaskEntity> taskEntities = taskRepository.findAllInCurrentSortByUnCompleted(listId).get();
+        TaskResponseDto responseDto = new TaskResponseDto(taskEntities);
+        return responseDto.getResponseDtoList();
+    }
 }
+
