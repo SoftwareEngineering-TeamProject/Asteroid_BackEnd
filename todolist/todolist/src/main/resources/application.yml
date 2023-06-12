@@ -13,7 +13,7 @@ spring:
     database-platform: org.hibernate.dialect.MySQLDialect
 #        hibernate.hbm2ddl.auto: update
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     properties:
       hibernate:
       # show_sql: true
