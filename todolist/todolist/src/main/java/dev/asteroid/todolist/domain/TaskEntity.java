@@ -11,7 +11,7 @@ import java.util.Date;
 
 import static jakarta.persistence.GenerationType.IDENTITY;
 
-@Table(name = "TASK")
+@Table(name = "task")
 @NoArgsConstructor
 @Getter @Setter
 @Entity
